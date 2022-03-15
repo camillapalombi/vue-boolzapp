@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
     font-size: 14px;
+    color: black;
 }
 
 /*CONTAINER VUE.JS*/
@@ -126,15 +127,26 @@
     padding: 9px 12px;
 }
 
+::placeholder {
+    color: rgb(153, 153, 153);
+    font-size: 13px;
+}
+
 
 /*Container all chat*/
 
+.container-all-chat {
+    height: calc(100vh - 70px - 60px - 45px);
+    overflow-y: scroll;
+}
 .container-single-chat {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 70px;
-    margin: 20px;
+    padding: 40px 20px;
+    border-top: 1px solid rgb(241, 239, 239);
+    cursor: pointer;
 }
 
 .container-single-chat:hover {
@@ -146,12 +158,13 @@
 }
 
 .last-msg-send {
-    color: grey;
+    color: rgb(180, 180, 180);
     font-size: 11px;
+    margin-top: 5px;
 }
 
 .clock-msg-sent {
-    color: grey;
+    color: rgb(180, 180, 180);
     font-size: 11px;
 }
 
