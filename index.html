@@ -26,7 +26,7 @@
                 <div class="container-myuser">
 
                     <div class="my-img-name">
-                        <img src="img/avatar_io.jpg" alt="My Image">
+                        <img class="my-avatar" src="img/avatar_io.jpg" alt="My Image">
                         <div class="my-name">Sofia</div>
                     </div>
                     <div class="my-user-icons">
@@ -65,15 +65,20 @@
 
                 <!--Container all chat-->
                 <div class="container-all-chat">
+
                     <div v-for="element in arrUsers" class="container-single-chat">
                         <div class="chat-img-name">
-                            <img :src="'img/' + element.image" :alt="element.name">
-                            <div class="chat-user-name"> {{ element.name }} </div>
-                            <div class="last-msg-send">Ultimo messaggio inviato</div>
+                            <img class="chat-avatar" :src="'img/' + element.image" :alt="element.name">
+
+                            <div class="name-message">
+                                <div class="chat-user-name"> {{ element.name }} </div>
+                                <div class="last-msg-send">Ultimo messaggio inviato</div>
+                            </div>
+
                         </div>
+
+                        <div class="clock-msg-sent">12.00</div>
                     </div>
-
-
 
                 </div>
 
