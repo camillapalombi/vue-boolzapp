@@ -42,8 +42,10 @@ const app = new Vue({
     },
     methods : {
         sentMessage() {
-            this.newArrMsg.push(this.newMessage);
-            this.newMessage = '';
+            if (this.newMessage != '') {
+                this.newArrMsg.push(this.newMessage);
+                this.newMessage = '';
+            }
         }
     }
 });
