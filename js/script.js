@@ -3,6 +3,8 @@
 const app = new Vue({
     el : '#root',
     data : {
+        newMessage : '',
+        newArrMsg : [],
         arrUsers : [
             {
                 name: 'Michele',
@@ -37,5 +39,11 @@ const app = new Vue({
                 image: 'avatar_8.jpg'
             },
         ]
+    },
+    methods : {
+        sentMessage() {
+            this.newArrMsg.push(this.newMessage);
+            this.newMessage = '';
+        }
     }
 });

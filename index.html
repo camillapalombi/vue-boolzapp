@@ -130,9 +130,11 @@
                         <div class="messages green">Abbastanza bene dai! Magari ne parliamo davanti ad un caffè</div>
                     </div>
 
-                    <div class="left-column">
-                        <div class="messages white">Tutto bene, grazie.Tu?</div>
+                    <div v-for="element in newArrMsg" class="left-column">
+                        <div class="messages white"> {{ element }}</div>
                     </div>
+
+                    
 
                 </div>
 
@@ -142,21 +144,11 @@
 
                     <i class="fa-solid fa-face-smile"></i>
 
-                    <input class="input-write-msg" type="text" placeholder="Scrivi un messaggio">
+                    <input @keyup.enter="sentMessage" v-model.trim="newMessage" class="input-write-msg" type="text" placeholder="Scrivi un messaggio">
 
                     <i class="fa-solid fa-microphone"></i>
 
                 </div>
-
-
-
-
-
-
-
-
-
-
 
             </div>
 
