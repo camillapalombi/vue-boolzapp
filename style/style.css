@@ -50,7 +50,7 @@
     justify-content: space-around;
 }
 
-img {
+.my-avatar {
     width: 50px;
     border-radius: 50%;
 }
@@ -129,7 +129,40 @@ img {
 
 /*Container all chat*/
 
+.container-single-chat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin: 20px;
+}
 
+.container-single-chat:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+.chat-img-name {
+    display: flex;
+}
+
+.last-msg-send {
+    color: grey;
+    font-size: 11px;
+}
+
+.clock-msg-sent {
+    color: grey;
+    font-size: 11px;
+}
+
+.chat-avatar {
+    width: 60px;
+    border-radius: 50%;
+}
+
+.name-message {
+    margin-left: 15px;
+}
 
 
 
