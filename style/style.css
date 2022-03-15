@@ -224,6 +224,43 @@
 .message-field {
     height: calc(100vh - 60px - 60px);
     background-image: url(../img/mine.jpg);
+    line-height: 1.5em;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.messages {
+    width: 300px;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.green {
+    background-color: rgb(178, 245, 158);
+}
+
+.white {
+    background-color: white;
+}
+
+.right-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding-right: 40px;
+}
+
+.left-column {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-left: 40px;
 }
 
 
@@ -247,3 +284,6 @@
 .send-new-msg i {
     color: grey;
 }
+
+
+
