@@ -14,6 +14,8 @@
 
 /*CONTAINER LEFT:*/
 
+/*Container my user*/
+
 .container-left {
     width: 30%;
     height: 100vh;
@@ -59,6 +61,9 @@ img {
     cursor: pointer;
 }
 
+
+/*Container notifications*/
+
 .container-notifications {
     background-color: rgba(142,218,252,255);
     height: 70px;
@@ -88,6 +93,42 @@ img {
 .setting-notific {
     margin-left: 10px;
 }
+
+
+/*Container search*/
+
+.container-search {
+    height: 45px;
+    background-color: rgb(247, 247, 247);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box-btn-input {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-search-chat {
+    border: none;
+    padding: 7px 12px;
+    background-color: white;
+    border-right: 1px solid rgb(240, 239, 239);
+    cursor: pointer;
+}
+
+.input-search-chat {
+    width: 400px;
+    border: none;
+    padding: 9px 12px;
+}
+
+
+/*Container all chat*/
+
 
 
 
