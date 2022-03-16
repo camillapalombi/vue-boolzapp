@@ -100,12 +100,12 @@
                     <div class="current-chat-left">
 
                         <div class="user-current-chat">
-                            <img class="avatar-current-chat" src="img/avatar_1.jpg" alt="Michele">
+                            <img class="avatar-current-chat" :src="'img/' + arrUsers[active].image" alt="arrUsers[active].name">
                         </div>
 
                         <div class="name-access-current-chat">
-                            <div>Michele</div>
-                            <div class="last-access">Ultimo accesso oggi alle 12.00</div>
+                            <div>{{ arrUsers[active].name }}</div>
+                            <div class="last-access">Ultimo accesso {{ arrUsers[active].chat.at(-1).date }}</div>
                         </div>
 
                     </div>
@@ -121,9 +121,9 @@
 
                 <div class="message-field">
 
-                    <div v-for="(element, index) in arrUsers" class="right-column">
-                        <div class="messages green"> {{ element }}
-                            <div class="date-time"></div>
+                    <div v-for="(message, index) in arrUsers[active].chat" :class="message.status == 'inviato' ? 'left-column':'right-column' ">
+                        <div class="messages"> {{ message.text }}
+                            <div class="date-time"> {{ message.date }}</div>
                         </div>
                     </div>
 
@@ -137,7 +137,7 @@
 
                     <i class="fa-solid fa-face-smile"></i>
 
-                    <input @keyup.enter="sentMessage" v-model.trim="newMessage" class="input-write-msg" type="text" placeholder="Scrivi un messaggio">
+                    <input @keyup.enter="sentMessage" v-model="newMessage" class="input-write-msg" type="text" placeholder="Scrivi un messaggio">
 
                     <i class="fa-solid fa-microphone"></i>
 

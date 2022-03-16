@@ -170,7 +170,7 @@ const app = new Vue({
             inputMsg.push(
                 {
                     text: this.newMessage,
-                    date:  dayjs().format("DD/MM/YYYY HH:mm:ss"),
+                    date:  luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm'),
                     status: 'inviato'
                 }
             );

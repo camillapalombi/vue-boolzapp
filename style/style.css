@@ -272,21 +272,15 @@ main {
 }
 
 .right-column {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    flex-wrap: wrap;
+    align-self: flex-end;
     padding-right: 40px;
+    background-color: green;
 }
 
 .left-column {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    flex-wrap: wrap;
+    align-self: flex-start;
     margin-left: 40px;
+    background-color: white;
 }
 
 .date-time {
