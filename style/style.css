@@ -258,7 +258,7 @@ main {
     padding: 15px 10px;
 }
 
-.right-column {
+.my-message {
     align-self: flex-end;
     margin-right: 40px;
     background-color: rgba(213,249,186,255);
@@ -269,7 +269,7 @@ main {
     position: relative;
 }
 
-.left-column {
+.user-message {
     align-self: flex-start;
     margin-left: 40px;
     margin-top: 10px;
