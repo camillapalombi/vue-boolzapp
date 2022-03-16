@@ -1,8 +1,8 @@
 const app = new Vue({
     el : '#root',
     data : {
-        newMessage : '',
-        active: 0,
+        newMessage : '', //testo inserito nel campo input
+        active: 0, //ci servirà come indice corrente, lo collegheremo all'index di arrUsers
         arrUsers : [
             {
                 name: 'Michele',
@@ -165,27 +165,32 @@ const app = new Vue({
         ]
     },
     methods : {
+        //Funzione invio messaggio
         sentMessage() {
+            if (this.newMessage != '') { //se l'input non è vuoto fai:
             let inputMsg = this.arrUsers[this.active].chat;
             inputMsg.push(
                 {
-                    text: this.newMessage,
+                    text: this.newMessage, //testo inserito nell'input
                     date:  luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm'),
                     status: 'inviato'
                 }
             );
-            this.newMessage = '';
+            this.newMessage = ''; //azzeramento campo input
+            //una volta inviato il msg dopo 1S rispondimi con un 'ok'
             setTimeout(function() {
                 inputMsg.push(
                     {
                         date: luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm'),
-                        text: "ok",
+                        text: "Okkei",
                         status: 'received'
                     }
                 );
             }
             , 1000)
+            }
         },
+        //collegamento active (indice corrente) con index di arrUsers
         showChat(index) {
             this.active = index;
         },
