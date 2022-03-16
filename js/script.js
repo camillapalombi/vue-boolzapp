@@ -46,6 +46,9 @@ const app = new Vue({
                 this.newArrMsg.push(this.newMessage);
                 this.newMessage = '';
             }
+        },
+        DateTime() {
+            return luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm');  
         }
     }
 });

@@ -18,7 +18,7 @@
 <body>
 
     <div class="green-stripe"></div>
-    
+
     <main>
         <!--CONTAINER VUE.JS-->
         <div id="root">
@@ -133,8 +133,10 @@
                         <div class="messages green">Abbastanza bene dai! Magari ne parliamo davanti ad un caffè..</div>
                     </div>
 
-                    <div v-for="element in newArrMsg" class="left-column">
-                        <div class="messages white"> {{ element }}</div>
+                    <div v-for="element in newArrMsg" class="right-column">
+                        <div class="messages green"> {{ element }}
+                            <div class="date-time">{{ DateTime() }}</div>
+                        </div>
                     </div>
 
                     
@@ -159,9 +161,12 @@
         <!--FINE CONTAINER VUE.JS-->
     </main>
 
+    <!--LUXON-->
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.3.1/build/global/luxon.min.js"></script>
     <!--VUE.JS-->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!--MY JS-->
     <script src="js/script.js"></script>
+
 </body>
 </html>
