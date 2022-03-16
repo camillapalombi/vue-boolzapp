@@ -175,6 +175,16 @@ const app = new Vue({
                 }
             );
             this.newMessage = '';
+            setTimeout(function() {
+                inputMsg.push(
+                    {
+                        date: luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm'),
+                        text: "ok",
+                        status: 'received'
+                    }
+                );
+            }
+            , 1000)
         },
         showChat(index) {
             this.active = index;

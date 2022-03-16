@@ -121,7 +121,7 @@
 
                 <div class="message-field">
 
-                    <div v-for="(message, index) in arrUsers[active].chat" :class="message.status == 'inviato' ? 'left-column':'right-column' ">
+                    <div v-for="(message, index) in arrUsers[active].chat" :class="message.status == 'inviato' ? 'right-column':'left-column' ">
                         <div class="messages"> {{ message.text }}
                             <div class="date-time"> {{ message.date }}</div>
                         </div>
