@@ -181,7 +181,7 @@ const app = new Vue({
             setTimeout(function() {
                 inputMsg.push(
                     {
-                        date: luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm'),
+                        date: `${luxon.DateTime.now().toRelativeCalendar()} alle ${luxon.DateTime.now().toFormat('HH:mm')}`,
                         text: "Okkei",
                         status: 'ricevuto'
                     }
