@@ -10,17 +10,17 @@ const app = new Vue({
                 chat: [
                     {
                         text: 'Ciao, come stai?',
-                        date: '16/03/2022 11:30:55',
+                        date: `${luxon.DateTime.fromISO('2022-03-16T09:43').toRelativeCalendar()} alle 9:43`,
                         status: 'inviato'
                     },
                     {
                         text: 'Io mi sto riprendendo dal covid ancora..',
-                        date: '16/03/2022 11:31:01',
+                        date: `${luxon.DateTime.fromISO('2022-03-16T09:47').toRelativeCalendar()} alle 9:47`,
                         status: 'inviato'
                     },
                     {
                         text: 'Ei ciao, io abbastanza bene dai. Dai che tra poco starai meglio!',
-                        date: '16/03/2022 11:31:01',
+                        date: `${luxon.DateTime.fromISO('2022-03-16T09:53').toRelativeCalendar()} alle 9:53`,
                         status: 'ricevuto'
                     }
                 ],
@@ -31,17 +31,17 @@ const app = new Vue({
                 chat: [
                     {
                         text: 'Hai tolto i panni dalla lavatrice??',
-                        date: '13/03/2022 9:32:46',
+                        date: `${luxon.DateTime.fromISO('2022-03-07T18:13').toRelativeCalendar()} alle 18:13`,
                         status: 'inviato'
                     },
                     {
                         text: 'Si amore, tranquilla!',
-                        date: '13/03/2022 9:43:01',
+                        date: `${luxon.DateTime.fromISO('2022-03-07T18:33').toRelativeCalendar()} alle 18:33`,
                         status: 'ricevuto'
                     },
                     {
                         text: 'Bravo tesoro, a dopo! :)',
-                        date: '13/03/2022 10:02:57',
+                        date: `${luxon.DateTime.fromISO('2022-03-07T18:43').toRelativeCalendar()} alle 18:43`,
                         status: 'inviato'
                     }
                 ],
@@ -52,17 +52,17 @@ const app = new Vue({
                 chat: [
                     {
                         text: 'Mi ricordi la password di Netflix?',
-                        date: '02/03/2022 20:32:46',
+                        date: `${luxon.DateTime.fromISO('2022-03-10T09:01').toRelativeCalendar()} alle 9:01`,
                         status: 'inviato'
                     },
                     {
                         text: 'Me la sono scordata...',
-                        date: '02/03/2022 20:43:01',
+                        date: `${luxon.DateTime.fromISO('2022-03-10T09:16').toRelativeCalendar()} alle 9:16`,
                         status: 'inviato'
                     },
                     {
                         text: 'Sempre la solita, eccola: 2345672',
-                        date: '02/03/2022 20:02:57',
+                        date: `${luxon.DateTime.fromISO('2022-03-10T09:43').toRelativeCalendar()} alle 9:43`,
                         status: 'ricevuto'
                     }
                 ],
@@ -73,17 +73,17 @@ const app = new Vue({
                 chat: [
                     {
                         text: 'Lo porti tu il bambino a calcio?',
-                        date: '7/03/2022 9:32:46',
+                        date: `${luxon.DateTime.fromISO('2022-03-02T09:41').toRelativeCalendar()} alle 9:41`,
                         status: 'inviato'
                     },
                     {
                         text: 'Non ho tempo.',
-                        date: '7/03/2022 9:43:01',
+                        date: `${luxon.DateTime.fromISO('2022-03-02T09:43').toRelativeCalendar()} alle 9:43`,
                         status: 'ricevuto'
                     },
                     {
                         text: 'Grazie..',
-                        date: '7/03/2022 10:02:57',
+                        date: `${luxon.DateTime.fromISO('2022-03-02T20:43').toRelativeCalendar()} alle 20:43`,
                         status: 'inviato'
                     }
                 ],
@@ -94,17 +94,17 @@ const app = new Vue({
                 chat: [
                     {
                         text: 'Mi passi gli appunti di storia?',
-                        date: '15/03/2022 9:32:46',
+                        date: `${luxon.DateTime.fromISO('2022-03-14T09:15').toRelativeCalendar()} alle 9:15`,
                         status: 'ricevuto'
                     },
                     {
                         text: 'No mi dispiace..',
-                        date: '15/03/2022 9:43:01',
+                        date: `${luxon.DateTime.fromISO('2022-03-14T09:20').toRelativeCalendar()} alle 9:20`,
                         status: 'inviato'
                     },
                     {
                         text: 'Fatteli da solo come ho fatto io',
-                        date: '15/03/2022 10:02:57',
+                        date: `${luxon.DateTime.fromISO('2022-03-14T09:43').toRelativeCalendar()} alle 9:43`,
                         status: 'inviato'
                     }
                 ],
@@ -115,17 +115,17 @@ const app = new Vue({
                 chat: [
                     {
                         text: 'Cosa vuoi per cena?',
-                        date: '22/03/2022 9:32:46',
+                        date: `${luxon.DateTime.fromISO('2022-03-11T09:20').toRelativeCalendar()} alle 9:20`,
                         status: 'inviato'
                     },
                     {
                         text: 'Tagliata di manzo',
-                        date: '22/03/2022 9:43:01',
+                        date: `${luxon.DateTime.fromISO('2022-03-11T09:31').toRelativeCalendar()} alle 9:31`,
                         status: 'ricevuto'
                     },
                     {
                         text: 'Sarà fatto, a dopo.',
-                        date: '22/03/2022 10:02:57',
+                        date: `${luxon.DateTime.fromISO('2022-03-11T09:43').toRelativeCalendar()} alle 9:43`,
                         status: 'inviato'
                     }
                 ],
@@ -136,12 +136,12 @@ const app = new Vue({
                 chat: [
                     {
                         text: 'hai rotto tu la mia collana?',
-                        date: '27/03/2022 9:32:46',
+                        date: `${luxon.DateTime.fromISO('2022-03-15T09:43').toRelativeCalendar()} alle 9:20`,
                         status: 'inviato'
                     },
                     {
                         text: 'ma cosa dici.. NO!',
-                        date: '27/03/2022 9:43:01',
+                        date: `${luxon.DateTime.fromISO('2022-03-15T09:43').toRelativeCalendar()} alle 9:43`,
                         status: 'ricevuto'
                     }
                 ],
@@ -152,12 +152,12 @@ const app = new Vue({
                 chat: [
                     {
                         text: 'Tanti auguri di buon compleanno Dave!!',
-                        date: '28/03/2022 9:32:46',
+                        date: `${luxon.DateTime.fromISO('2022-03-16T09:32').toRelativeCalendar()} alle 9:32`,
                         status: 'inviato'
                     },
                     {
                         text: 'Grazie mille',
-                        date: '16/03/2022 9:43:01',
+                        date: `${luxon.DateTime.fromISO('2022-03-16T09:43').toRelativeCalendar()} alle 9:43`,
                         status: 'ricevuto'
                     },
                 ],
@@ -172,7 +172,7 @@ const app = new Vue({
             inputMsg.push(
                 {
                     text: this.newMessage, //testo inserito nell'input
-                    date:  luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm'),
+                    date:  `${luxon.DateTime.now().toRelativeCalendar()} alle ${luxon.DateTime.now().toFormat('HH:mm')}`,
                     status: 'inviato'
                 }
             );
@@ -183,7 +183,7 @@ const app = new Vue({
                     {
                         date: luxon.DateTime.now().toFormat('dd/MM/yyyy HH:mm'),
                         text: "Okkei",
-                        status: 'received'
+                        status: 'ricevuto'
                     }
                 );
             }
