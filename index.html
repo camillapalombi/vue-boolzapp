@@ -69,18 +69,18 @@
                 <!--Container all chat-->
                 <div class="container-all-chat">
 
-                    <div v-for="element in arrUsers" class="container-single-chat">
+                    <div v-for="(element, index) in arrUsers" class="container-single-chat" @click="showChat(index)">
                         <div class="chat-img-name">
                             <img class="chat-avatar" :src="'img/' + element.image" :alt="element.name">
 
                             <div class="name-message">
                                 <div class="chat-user-name"> {{ element.name }} </div>
-                                <div class="last-msg-send">Ultimo messaggio inviato</div>
+                                <div v-for="(message, index) in element.chat"> <span class="last-msg-send" v-if="index == element.chat.length - 1"> {{ message.text }}</span></div>
                             </div>
 
                         </div>
 
-                        <div class="clock-msg-sent">12.00</div>
+                        <div v-for="(message, index) in element.chat"> <span class="clock-msg-sent" v-if="index == element.chat.length - 1"> {{ message.date }}</span></div>
                     </div>
 
                 </div>
@@ -121,21 +121,9 @@
 
                 <div class="message-field">
 
-                    <div class="right-column">
-                        <div class="messages green">Ciao come stai?</div>
-                    </div>
-
-                    <div class="left-column">
-                        <div class="messages white">Tutto bene, grazie.Tu?</div>
-                    </div>
-
-                    <div class="right-column">
-                        <div class="messages green">Abbastanza bene dai! Magari ne parliamo davanti ad un caffè..</div>
-                    </div>
-
-                    <div v-for="element in newArrMsg" class="right-column">
+                    <div v-for="(element, index) in arrUsers" class="right-column">
                         <div class="messages green"> {{ element }}
-                            <div class="date-time">{{ DateTime() }}</div>
+                            <div class="date-time"></div>
                         </div>
                     </div>
 
