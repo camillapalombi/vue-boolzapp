@@ -1,12 +1,14 @@
 const app = new Vue({
     el : '#root',
     data : {
-        newMessage : '', //testo inserito nel campo input
+        findString: '',
+        newMessage: '', //testo inserito nel campo input
         active: 0, //ci servirà come indice corrente, lo collegheremo all'index di arrUsers
         arrUsers : [
             {
                 name: 'Michele',
                 image: 'avatar_1.jpg',
+                visible: true,
                 chat: [
                     {
                         text: 'Ciao, come stai?',
@@ -28,6 +30,7 @@ const app = new Vue({
             {
                 name: 'Fabio',
                 image: 'avatar_2.jpg',
+                visible: true,
                 chat: [
                     {
                         text: 'Hai tolto i panni dalla lavatrice??',
@@ -49,6 +52,7 @@ const app = new Vue({
             {
                 name: 'Samuele',
                 image: 'avatar_3.jpg',
+                visible: true,
                 chat: [
                     {
                         text: 'Mi ricordi la password di Netflix?',
@@ -70,6 +74,7 @@ const app = new Vue({
             {
                 name: 'Alessandro B.',
                 image: 'avatar_4.jpg',
+                visible: true,
                 chat: [
                     {
                         text: 'Lo porti tu il bambino a calcio?',
@@ -91,6 +96,7 @@ const app = new Vue({
             {
                 name: 'Alessandro L.',
                 image: 'avatar_5.jpg',
+                visible: true,
                 chat: [
                     {
                         text: 'Mi passi gli appunti di storia?',
@@ -112,6 +118,7 @@ const app = new Vue({
             {
                 name: 'Claudia',
                 image: 'avatar_6.jpg',
+                visible: true,
                 chat: [
                     {
                         text: 'Cosa vuoi per cena?',
@@ -133,6 +140,7 @@ const app = new Vue({
             {
                 name: 'Federico',
                 image: 'avatar_7.jpg',
+                visible: true,
                 chat: [
                     {
                         text: 'hai rotto tu la mia collana?',
@@ -149,6 +157,7 @@ const app = new Vue({
             {
                 name: 'Davide',
                 image: 'avatar_8.jpg',
+                visible: true,
                 chat: [
                     {
                         text: 'Tanti auguri di buon compleanno Dave!!',
@@ -172,7 +181,7 @@ const app = new Vue({
             inputMsg.push(
                 {
                     text: this.newMessage, //testo inserito nell'input
-                    date:  `${luxon.DateTime.now().toRelativeCalendar()} alle ${luxon.DateTime.now().toFormat('HH:mm')}`,
+                    date:  `${luxon.DateTime.now().toRelativeCalendar()} alle ${luxon.DateTime.now().toFormat('HH:mm')}`, // oggi alle
                     status: 'inviato'
                 }
             );
@@ -181,7 +190,7 @@ const app = new Vue({
             setTimeout(function() {
                 inputMsg.push(
                     {
-                        date: `${luxon.DateTime.now().toRelativeCalendar()} alle ${luxon.DateTime.now().toFormat('HH:mm')}`,
+                        date: `${luxon.DateTime.now().toRelativeCalendar()} alle ${luxon.DateTime.now().toFormat('HH:mm')}`, //oggi alle
                         text: "Okkei",
                         status: 'ricevuto'
                     }
@@ -194,5 +203,14 @@ const app = new Vue({
         showChat(index) {
             this.active = index;
         },
+        findUserChat() {
+            this.arrUsers.forEach(element => {
+                if (element.name.toLowerCase().includes(this.findString.toLowerCase())) {
+                    element.visible = true;
+                } else {
+                    element.visible = false;
+                }
+            });
+        }
     }
 });

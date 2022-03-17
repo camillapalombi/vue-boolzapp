@@ -65,7 +65,7 @@
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </button>
 
-                        <input class="input-search-chat" type="text" placeholder="Cerca o inizia una nuova chat">
+                        <input v-model="findString" @keyup="findUserChat" class="input-search-chat" type="text" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                 </div>
@@ -73,7 +73,7 @@
                 <!--Container all chat-->
                 <div class="container-all-chat">
 
-                    <div v-for="(element, index) in arrUsers" class="container-single-chat" @click="showChat(index)">
+                    <div v-for="(element, index) in arrUsers" class="container-single-chat" @click="showChat(index)" :class="{ active: index == active, show: !element.visible }">
                         <div class="chat-img-name">
                             <img class="chat-avatar" :src="'img/' + element.image" :alt="element.name">
 
