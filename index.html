@@ -129,8 +129,8 @@
                             <div class="date-time"> {{ message.date }}</div>
                             <!--dropdown menu-->
                             <div class="dropdown">
-                                <button class="drop-btn"><i class="fa-solid fa-angle-down"></i></button>
-                                <div id="myDropdown" class="dropdown-content">
+                                <button @click="message.opendrop = !message.opendrop" class="drop-btn"><i class="fa-solid fa-angle-down"></i></button>
+                                <div id="myDropdown" class="dropdown-content" :class="message.opendrop == false ? 'open' : ''" >
                                     <div class="info-msg dropdown-link">
                                         <a href="#">Info messaggio</a>
                                     </div>
