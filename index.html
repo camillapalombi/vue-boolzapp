@@ -79,12 +79,12 @@
 
                             <div class="name-message">
                                 <div class="chat-user-name"> {{ element.name }} </div>
-                                <div v-for="(message, index) in element.chat"> <span class="last-msg-send" v-if="index == element.chat.length - 1"> {{ message.text }}</span></div>
+                                <div v-for="(message, index) in element.chat"> <span class="last-msg-send" v-if="element.chat.length >= 1 ? index == element.chat.length - 1 : ''"> {{ message.text }}</span></div>
                             </div>
 
                         </div>
 
-                        <div v-for="(message, index) in element.chat"> <span class="clock-msg-sent" v-if="index == element.chat.length - 1"> {{ message.date }}</span></div>
+                        <div v-for="(message, index) in element.chat"> <span class="clock-msg-sent" v-if="element.chat.length >= 1 ? index == element.chat.length - 1 : ''"> {{ message.date }}</span></div>
                     </div>
 
                 </div>
@@ -135,7 +135,7 @@
                                         <a href="#">Info messaggio</a>
                                     </div>
                                     <div class="delete-msg dropdown-link">
-                                        <a href="#">Elimina messaggio</a>
+                                        <a @click="deleteMessage(active)" href="#">Elimina messaggio</a>
                                     </div>
                                 </div>
                               </div>
