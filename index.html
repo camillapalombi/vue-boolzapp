@@ -79,12 +79,12 @@
 
                             <div class="name-message">
                                 <div class="chat-user-name"> {{ element.name }} </div>
-                                <div v-for="(message, index) in element.chat"> <span class="last-msg-send" v-if="element.chat.length >= 1 ? index == element.chat.length - 1 : ''"> {{ message.text }}</span></div>
+                                <div v-for="(message, index) in element.chat"> <span class="last-msg-send" v-if="index == element.chat.length - 1"> {{ message.text }}</span></div>
                             </div>
 
                         </div>
 
-                        <div v-for="(message, index) in element.chat"> <span class="clock-msg-sent" v-if="element.chat.length >= 1 ? index == element.chat.length - 1 : ''"> {{ message.date }}</span></div>
+                        <div v-for="(message, index) in element.chat"> <span class="clock-msg-sent" v-if="index == element.chat.length - 1"> {{ message.date }}</span></div>
                     </div>
 
                 </div>
@@ -127,15 +127,16 @@
                         <div class="messages"> {{ message.text }}
 
                             <div class="date-time"> {{ message.date }}</div>
+
                             <!--dropdown menu-->
                             <div class="dropdown">
                                 <button @click="message.opendrop = !message.opendrop" class="drop-btn"><i class="fa-solid fa-angle-down"></i></button>
-                                <div id="myDropdown" class="dropdown-content" :class="message.opendrop == false ? 'open' : ''" >
+                                <div class="dropdown-content" :class="message.opendrop == false ? 'open' : ''" >
                                     <div class="info-msg dropdown-link">
                                         <a href="#">Info messaggio</a>
                                     </div>
                                     <div class="delete-msg dropdown-link">
-                                        <a @click="deleteMessage(active)" href="#">Elimina messaggio</a>
+                                        <a @click="deleteMessage(index)" href="#">Elimina messaggio</a>
                                     </div>
                                 </div>
                               </div>

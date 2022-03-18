@@ -1,7 +1,7 @@
 const app = new Vue({
     el : '#root',
     data : {
-        findString: '',
+        findString: '', //ricerca chat utente
         newMessage: '', //testo inserito nel campo input
         active: 0, //ci servirà come indice corrente, lo collegheremo all'index di arrUsers
         arrUsers : [
@@ -237,16 +237,10 @@ const app = new Vue({
                 }
             });
         },
-        deleteMessage(active) {
-            this.arrUsers[active].chat.splice(-1, 1);
+        //cancellazione messaggio
+        deleteMessage(index) {
+            let indexMsg = this.arrUsers[this.active].chat;
+                indexMsg.splice(index, 1);
         }
     }
 });
-
-
-
-
-/*deleteMessage(index) {
-            let indexMsg = this.arrUsers[this.active].chat;
-                indexMsg.splice(index, 1);
-        },*/
