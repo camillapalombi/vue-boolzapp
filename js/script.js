@@ -213,8 +213,8 @@ const app = new Vue({
             setTimeout(function() {
                 inputMsg.push(
                     {
-                        date: `${luxon.DateTime.now().toRelativeCalendar()} alle ${luxon.DateTime.now().toFormat('HH:mm')}`, //oggi alle
                         text: "Okkei",
+                        date: `${luxon.DateTime.now().toRelativeCalendar()} alle ${luxon.DateTime.now().toFormat('HH:mm')}`, //oggi alle
                         status: 'ricevuto',
                         opendrop: true
                     }
@@ -240,7 +240,16 @@ const app = new Vue({
         //cancellazione messaggio
         deleteMessage(index) {
             let indexMsg = this.arrUsers[this.active].chat;
-                indexMsg.splice(index, 1);
+                return indexMsg.splice(index, 1);    
+        },
+        // funziona x definire data e ora dell'ultimo accesso dell'utente attivo
+        lastDateAccess() {
+            let lastDate = this.arrUsers[this.active].chat;
+            if (lastDate == '') {
+               return lastDate = 'sconosciuto';
+            } else {
+               return lastDate.at(-1).date;
+            }
         }
     }
 });

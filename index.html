@@ -84,7 +84,7 @@
 
                         </div>
 
-                        <div v-for="(message, index) in element.chat"> <span class="clock-msg-sent" v-if="index == element.chat.length - 1"> {{ message.date }}</span></div>
+                        <div v-for="(message, index) in element.chat"><span class="clock-msg-sent" v-if="index == element.chat.length - 1"> {{ message.date }}</span></div>
                     </div>
 
                 </div>
@@ -106,7 +106,7 @@
 
                         <div class="name-access-current-chat">
                             <div>{{ arrUsers[active].name }}</div>
-                            <div class="last-access">Ultimo accesso {{ arrUsers[active].chat.at(-1).date }}</div>
+                            <div class="last-access">Ultimo accesso {{ lastDateAccess() }}</div>
                         </div>
 
                     </div>
